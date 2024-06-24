@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Rapid BILL</string>
+    <string name="col">Sr.No</string>
+    <string name="col1">Name</string>
+    <string name="col2">MRP</string>
+    <string name="col3">Qty</string>
+    <string name="col4">Amount</string>
+    <string name="row1">1</string>
+    <string name="row2">2</string>
+    <string name="row1Name"> x</string>
+    <string name="row1Cost">232</string>
+    <string name="row1Quantity">1</string>
+    <string name="row1MRP">232</string>
+    <string name="g_pay_logo" />
+</resources>

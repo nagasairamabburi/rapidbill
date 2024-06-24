@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Payment heading -->
+    <TextView
+        android:id="@+id/textViewPaymentHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Payment options -->
+    <LinearLayout
+        android:id="@+id/layoutPaymentOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/textViewPaymentHeading"
+        android:layout_marginTop="16dp">
+
+        <!-- UPI option -->
+        <Button
+            android:id="@+id/buttonUPI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="UPI"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Card option -->
+        <Button
+            android:id="@+id/buttonCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Card"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Netbanking option -->
+        <Button
+            android:id="@+id/buttonNetbanking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Netbanking"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Cash on Delivery option -->
+        <Button
+            android:id="@+id/buttonCashOnDelivery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cash on Delivery"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+    </LinearLayout>
+
+    <!-- UPI options -->
+    <LinearLayout
+        android:id="@+id/layoutUpiOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/layoutPaymentOptions"
+        android:layout_marginTop="16dp"
+        android:visibility="gone">
+
+        <!-- G-Pay section -->
+        <LinearLayout
+            android:id="@+id/GPay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="74dp"
+                android:layout_height="91dp"
+                android:contentDescription="@string/g_pay_logo"
+                android:src="@drawable/gpay_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Google Pay"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"/>
+
+        </LinearLayout>
+
+        <!-- PhonePay section -->
+        <LinearLayout
+            android:id="@+id/PhonePay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/GPay"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:layout_width="74dp"
+                android:layout_height="98dp"
+                android:contentDescription="PhonePay Logo"
+                android:src="@drawable/phonepay_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PhonePe"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"/>
+
+        </LinearLayout>
+
+        <!-- Paytm section -->
+        <LinearLayout
+            android:id="@+id/Paytm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/PhonePay"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:layout_width="67dp"
+                android:layout_height="100dp"
+                android:contentDescription="Paytm Logo"
+                android:src="@drawable/paytm_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paytm"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"/>
+
+        </LinearLayout>
+
+        <!-- Others section -->
+        <LinearLayout
+            android:id="@+id/layoutOthers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@id/Paytm"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Others"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"/>
+
+        </LinearLayout>
+
+        <!-- UPI ID EditText -->
+        <EditText
+            android:id="@+id/editTextUPIID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layoutOthers"
+            android:layout_marginTop="16dp"
+            android:hint="Enter UPI ID"
+            android:visibility="gone"/>
+
+        <!-- Button to make payment -->
+        <Button
+            android:id="@+id/buttonMakePayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make Payment"
+            android:layout_below="@id/editTextUPIID"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+
+    <!-- Card details -->
+    <LinearLayout
+        android:id="@+id/layoutCardDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/layoutPaymentOptions"
+        android:visibility="gone">
+
+        <!-- Card Number -->
+        <EditText
+            android:id="@+id/editTextCardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Card Number"
+            android:inputType="number"/>
+
+        <!-- Cardholder Name -->
+        <EditText
+            android:id="@+id/editTextCardholderName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cardholder Name"/>
+
+        <!-- Expiry Date -->
+        <EditText
+            android:id="@+id/editTextExpiryDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Expiry Date"/>
+
+        <!-- CVV -->
+        <EditText
+            android:id="@+id/editTextCVV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CVV"
+            android:inputType="numberPassword"/>
+
+        <!-- Submit button for card details -->
+        <Button
+            android:id="@+id/buttonSubmitCardDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"/>
+    </LinearLayout>
+</RelativeLayout>

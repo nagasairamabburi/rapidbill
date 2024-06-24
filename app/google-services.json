@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "10174577232",
+    "firebase_url": "https://rapidbill-9d91e-default-rtdb.firebaseio.com",
+    "project_id": "rapidbill-9d91e",
+    "storage_bucket": "rapidbill-9d91e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10174577232:android:837d8824516124fb222f55",
+        "android_client_info": {
+          "package_name": "com.example.rapidbill"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "10174577232-74qt1hdjdvojtkjn3t85d2ks4hn0kkt7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnQ7KDZOqJHD-GQMzNRKENnqmgytPJeMM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "10174577232-74qt1hdjdvojtkjn3t85d2ks4hn0kkt7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.RapidBILL" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="NavigationViewStyle" parent="Widget.Design.NavigationView">
+        <item name="android:textColor">@color/your_menu_text_color</item>
+    </style>
+
+
+    <style name="Theme.RapidBILL" parent="Base.Theme.RapidBILL" />
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:RelativeLayout="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#7158A8"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/arrow_back"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar_title"
+            android:text="Billing History"
+            android:textSize="20sp"
+            android:layout_marginStart="16dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/back"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/billing_scan"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:text=" No Bills here " />
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Billing"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:id="@+id/billing_scan">
+    </Button>
+
+</RelativeLayout>

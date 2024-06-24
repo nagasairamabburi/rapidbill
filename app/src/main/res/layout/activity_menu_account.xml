@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/fiveminutes">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#7158A8"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="#7158A8"
+            android:src="@drawable/arrow_back" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/back"
+            android:text="Account"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/image_account"
+        android:layout_width="match_parent"
+        android:layout_height="381dp"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_marginTop="23dp"
+
+        android:padding="20dp"
+        android:src="@drawable/baseline_account_circle" />
+
+    <TextView
+        android:id="@+id/namde_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_account"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="20sp"
+        android:layout_marginTop="3dp"
+        android:padding="9dp"
+        android:textStyle="bold"
+        android:text="Name :-" />
+
+
+    <TextView
+        android:padding="9dp"
+        android:id="@+id/email_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/namde_account"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="20sp"
+        android:layout_marginTop="3dp"
+        android:textStyle="bold"
+        android:text="Email Id :-" />
+
+    <TextView
+        android:padding="9dp"
+        android:id="@+id/number_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email_account"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="20sp"
+        android:layout_marginTop="3dp"
+        android:textStyle="bold"
+        android:text="Phone Number :-" />
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_account"
+        android:layout_toEndOf="@id/namde_account"
+        android:padding="9dp"
+        android:text="xyz"
+        android:textSize="20sp" />
+
+
+    <TextView
+        android:id="@+id/userID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/namde_account"
+        android:layout_toEndOf="@id/email_account"
+        android:padding="9dp"
+        android:text="xyz@gmail.com"
+        android:textSize="20sp" />
+
+
+
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email_account"
+        android:layout_toEndOf="@id/number_account"
+        android:padding="9dp"
+        android:text="XXXXX"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>
