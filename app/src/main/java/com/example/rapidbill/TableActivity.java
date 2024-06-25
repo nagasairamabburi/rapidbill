@@ -81,19 +81,15 @@ public class TableActivity extends AppCompatActivity {
         int paddingInPx = (int) (paddingInDp * scale + 0.5f);
         newRow.setPadding(0, paddingInPx, 0, paddingInPx);
 
-        // Add serial number to the row
         TextView serialNumberTextView = createTextView(String.valueOf(serialNumber++), 2,30, Gravity.CENTER);
         newRow.addView(serialNumberTextView);
 
-        // Add product name to the row
         TextView productNameTextView = createTextView(productName, 5,30, Gravity.CENTER);
         newRow.addView(productNameTextView);
 
-        // Add EditText for Quantity
         TextView quantityTextView = createTextView("40", 1.8,30, Gravity.CENTER);
         newRow.addView(quantityTextView);
 
-        // Add buttons for MRP with "+" and "-" functionality
         TableRow mrpRow = new TableRow(this);
         Button decreaseButton = createButton("-", 30,30,0, Gravity.CENTER);
         TextView mrpTextView = createTextView("1", 1.0,30, Gravity.CENTER);
@@ -115,11 +111,9 @@ public class TableActivity extends AppCompatActivity {
         mrpRow.addView(increaseButton);
         newRow.addView(mrpRow);
 
-        // Add TextView for Amount
         TextView amountTextView = createTextView("40", 2.6,300, Gravity.CENTER);
         newRow.addView(amountTextView);
 
-        // Add the new row to the table
         tableLayout.addView(newRow);
     }
 
@@ -128,11 +122,10 @@ public class TableActivity extends AppCompatActivity {
         button.setText(text);
         button.setLayoutParams(new TableRow.LayoutParams(convertDpToPx(widthInDp), convertDpToPx(heightInDp), (float) weight));
         button.setGravity(gravity);
-        button.setPadding(0, 0, 0, 0); // Adjust padding as needed
+        button.setPadding(0, 0, 0, 0);
         return button;
     }
 
-    // Method to convert dp to pixels
     private int convertDpToPx(int dp){
         return (int) (dp * getResources().getDisplayMetrics().density);
     }
@@ -143,8 +136,8 @@ public class TableActivity extends AppCompatActivity {
         textView.setText(text);
         textView.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.WRAP_CONTENT, (float) weight));
         textView.setGravity(gravity);
-        textView.setTextColor(getResources().getColor(R.color.black)); // Change to your desired color
-        textView.setTextSize(14); // Change to your desired text size
+        textView.setTextColor(getResources().getColor(R.color.black));
+        textView.setTextSize(14);
         return textView;
     }
 
@@ -160,7 +153,6 @@ public class TableActivity extends AppCompatActivity {
             double amount = quantity * mrp;
             amountTextView.setText(String.valueOf(amount));
         } catch (NumberFormatException e) {
-            // Handle the case where input is not a valid number
             amountTextView.setText("Error");
         }
     }

@@ -102,16 +102,11 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String storedStoreName = sharedPreferences.getString(STORE_NAME_PREF, "");
         if (!storedStoreName.isEmpty()) {
-            // Set the stored store name in the EditText
             storeNameEditText.setText(storedStoreName);
-            // Disable editing in EditText
             storeNameEditText.setEnabled(false);
-            // Prevent focus on EditText
             storeNameEditText.setFocusable(false);
-            // Prevent cursor from being visible
             storeNameEditText.setCursorVisible(false);
         }
-        // Set click listeners for buttons
         increase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (menuIcon != null) {
             menuIcon.setOnClickListener(view -> {
-                // Open the sidebar menu
                 drawerLayout.openDrawer(Gravity.LEFT);
             });
         }
@@ -148,7 +142,6 @@ public class MainActivity extends AppCompatActivity {
             if (storeName.isEmpty()) {
                 Toast.makeText(MainActivity.this, "Please enter the Store name to Scan barcode", Toast.LENGTH_SHORT).show();
             } else {
-                // Start barcode scanner
                 scanCode();
             }
         });
@@ -187,11 +180,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Logged Out", Toast.LENGTH_SHORT).show();
             FirebaseAuth.getInstance().signOut();
 
-            // Open LoginActivity
             Intent intent = new Intent(MainActivity.this, com.example.rapidbill.Login.class);
             startActivity(intent);
 
-            // Finish the current activity
             finish();
         }
     }
@@ -206,7 +197,6 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(chooser);
         } else {
-            // Handle the case where no email app is available
             Toast.makeText(this, "No email app found", Toast.LENGTH_SHORT).show();
         }
     }
@@ -222,11 +212,9 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityResultLauncher<ScanOptions> barLauncher = registerForActivityResult(new ScanContract(), result -> {
         if (result.getContents() != null) {
-            // Update the barcodeTextView with the scanned result and additional text
             String scanResult = result.getContents();
             SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
 
-            // Check if the scanned product is already in the list
             List<String> scanResults = getScanResults();
             if (scanResults.contains(scanResult)) {
                 // Product already scanned
@@ -236,19 +224,15 @@ public class MainActivity extends AppCompatActivity {
                 numberTextView.setVisibility(View.INVISIBLE);
             }
             else {
-                String additionalText = " has been added to cart"; // Additional text you want to add
+                String additionalText = " has been added to cart";
                 String resultWithAdditionalText = scanResult + additionalText;
                 barcodeTextView.setText(resultWithAdditionalText);
 
                 int currentNumber = sharedPreferences.getInt(scanResult, 0);
-                // Increment the number for the scanned product
                 currentNumber++;
-                // Save the updated number in shared preferences
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt(scanResult, currentNumber);
                 editor.apply();
-
-                // Update the UI with the new number
                 numberTextView.setText(String.valueOf(currentNumber));
 
                 saveScanResult(scanResult);
@@ -259,18 +243,11 @@ public class MainActivity extends AppCompatActivity {
                 checkout.setVisibility(View.VISIBLE);
                 numberTextView.setVisibility(View.VISIBLE);
 
-                // Create an Intent to start the TableActivity
-                //Intent intent = new Intent(MainActivity.this, TableActivity.class);
 
-                // Put the scanned result as an extra in the Intent
-                //intent.putExtra("SCAN_RESULT", scanResult);
-
-                // Start the TableActivity
-                //startActivity(intent);
             }
         }
     });
-    // Method to save the scanned result in shared preferences
+
     private void saveScanResult(String scanResult) {
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         Gson gson = new Gson();
@@ -284,13 +261,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
 
-        // Save the store name in SharedPreferences when the activity is stopped
+
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(STORE_NAME_PREF, storeNameEditText.getText().toString());
         editor.apply();
     }
-    // Method to retrieve the list of scanned results from shared preferences
+
     private List<String> getScanResults() {
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         Gson gson = new Gson();
@@ -317,20 +294,17 @@ public class MainActivity extends AppCompatActivity {
     private void clearNumberData() {
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.clear(); // This clears all data in the SharedPreferences
+        editor.clear();
         editor.apply();
     }
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
-            // If the user presses back again within a short time, close the app
             super.onBackPressed();
-            finishAffinity(); // Close all activities
+            finishAffinity();
         } else {
-            // Inform the user to press back again to exit
             this.doubleBackToExitPressedOnce = true;
             Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show();
 
-            // Reset the flag after a short time (e.g., 2 seconds)
             new android.os.Handler().postDelayed(
                     new Runnable() {
                         @Override

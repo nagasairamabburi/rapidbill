@@ -15,6 +15,5 @@
         android:scaleType="centerCrop"
         android:src="@drawable/bc" />
 
-    <!-- Add any additional views, such as a TextView for user name, etc. -->
 
 </LinearLayout>

@@ -46,8 +46,6 @@ public class menu_account extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Perform the action you want when the image is clicked
-                // For example, start a new activity
                 startActivity(new Intent(menu_account.this, MainActivity.class));
             }
         });

@@ -11,7 +11,7 @@
         android:gravity="center"
         android:text="Sr. No."
         android:background="#800080"
-        android:textColor="#FFFFFF"/> <!-- Set white text color -->
+        android:textColor="#FFFFFF"/>
 
     <TextView
         android:id="@+id/tvProduct"
@@ -21,7 +21,7 @@
         android:gravity="center"
         android:text="Product"
         android:background="#800080"
-        android:textColor="#FFFFFF"/> <!-- Set white text color -->
+        android:textColor="#FFFFFF"/>
 
     <TextView
         android:id="@+id/tvCost"
@@ -31,7 +31,7 @@
         android:gravity="center"
         android:text="Cost"
         android:background="#800080"
-        android:textColor="#FFFFFF"/> <!-- Set white text color -->
+        android:textColor="#FFFFFF"/>
 
     <TextView
         android:id="@+id/tvQty"
@@ -41,7 +41,7 @@
         android:gravity="center"
         android:text="Qty"
         android:background="#800080"
-        android:textColor="#FFFFFF"/> <!-- Set white text color -->
+        android:textColor="#FFFFFF"/>
 
     <TextView
         android:id="@+id/tvAmount"
@@ -51,6 +51,6 @@
         android:gravity="center"
         android:text="Amount"
         android:background="#800080"
-        android:textColor="#FFFFFF"/> <!-- Set white text color -->
+        android:textColor="#FFFFFF"/>
 
 </TableRow>

@@ -2,7 +2,7 @@ package com.example.rapidbill;
 
 public class User {
 
-    String userId;  // New field for Firebase Authentication UID
+    String userId;
     String name, email, password, phone;
 
     public String getUserId() {

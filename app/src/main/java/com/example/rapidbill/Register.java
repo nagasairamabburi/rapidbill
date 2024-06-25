@@ -120,29 +120,24 @@ public class Register extends AppCompatActivity {
 
                 progressBar.setVisibility(View.VISIBLE);
 
-                // Create user in Firebase Authentication
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
-                                    // User created successfully in Firebase Authentication
                                     showToast("Registration successful!");
                                     FirebaseUser firebaseUser = mAuth.getCurrentUser();
                                     if (firebaseUser != null) {
                                         String userId = firebaseUser.getUid();
 
-                                        // Create User object and store in Realtime Database
                                         User user = new User(userId, name, email,password, phone);
                                         reference.child(userId).setValue(user);
 
-                                        // Continue with your app logic, e.g., navigate to the next activity
                                         Intent intent = new Intent(Register.this, MainActivity.class);
                                         startActivity(intent);
                                     }
                                 } else {
-                                    // If registration fails, display a message to the user.
                                     showToast("Registration failed. " + task.getException().getMessage());
                                 }
                             }
